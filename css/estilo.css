@@ -3,17 +3,18 @@
  * Theme URI:        https://piruletas.000webhostapp.com/
  * Version:          0.1.0
  * Description:      Child theme of TwentyTwelve.
- * Author:           Lola
+ * Author:           Maria Jesús Prior Bruno y Carlos Alcalá Yepes
  * Template:         twentytwelve
  * Template Version: 1.0.0
  * GitHub Theme URI: https://github.com/dllido/EI1036_42_public/tree/master/P1
  */
 body {
     font-family: arial;
-    background-image: url('../img/fondo.png');
+    background-image: url('../img/fondo6.png');
     max-width: 1000px;
     margin: 0 auto;
     /* Centrado */
+
 }
 
 header {
@@ -27,7 +28,7 @@ nav, footer {
     margin-bottom: 10px;
     padding: 4px;
     text-align: center;
-    background-color: #914bb9;
+    background-color: #FC8167;
     font-size: 80%;
 }
 
@@ -56,14 +57,17 @@ h2 {
 
 #logo {
     float: left;
+    margin: 5% 5%;
     max-width: 15%;
-    min-width: 5%;
+    min-width: 15%;
 }
 
 #eslogan {
     float: left;
     margin: 5% 5%;
-    color: #914bb9;
+    color: #6BAE4D;
+    font-size: 250%;
+    font-weight: bolder;
 }
 
 #registro {
