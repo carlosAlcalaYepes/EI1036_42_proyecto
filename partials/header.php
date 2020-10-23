@@ -22,6 +22,6 @@
 
 <body>
 	<header>
-		<img src="./img/Logo-ACCE.gif" id="logo" alt="logo" />
-		<p id="eslogan">Asociación de Consumidores de Comercio Electrónico</p>
+		<img src="./img/fruta_logo.png" id="logo" alt="logo" />
+		<p id="eslogan">Fruteria</p>
 	</header>

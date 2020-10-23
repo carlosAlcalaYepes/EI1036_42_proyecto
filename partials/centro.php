@@ -1,1 +1,1 @@
-<h1> Mi LOGO de tienda AQUÍ</h1>
+<h1> <img src="./img/fruta_logo.png" id="logo" alt="logo" /></h1>
