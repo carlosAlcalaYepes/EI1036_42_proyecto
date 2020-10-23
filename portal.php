@@ -2,12 +2,12 @@
     //view_form.php
 
 /**
- * * Descripción: Ejemplo de proyecto
+ * * Descripción: Proyecto
  * *
  * * 
  * *
  * * @author  Maria Jesús y Carlos Alcalá Yepes
- * * @copyright 2020 Rafa B.
+ * * @copyright 2020 Carlos.Alcalá y Maria Jesús.Prior
  * * @license http://www.fsf.org/licensing/licenses/gpl.txt GPL 2 or later
  * * @version 1
 
