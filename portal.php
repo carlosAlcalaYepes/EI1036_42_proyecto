@@ -6,7 +6,7 @@
  * *
  * * 
  * *
- * * @author  Rafael Berlanga
+ * * @author  Maria Jesús
  * * @copyright 2020 Rafa B.
  * * @license http://www.fsf.org/licensing/licenses/gpl.txt GPL 2 or later
  * * @version 1
