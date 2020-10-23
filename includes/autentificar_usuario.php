@@ -29,19 +29,22 @@ function autentificar_usuario()
                           VALUES (?,?)";
     try { 
         $valor = array($_REQUEST['nombre'],$_REQUEST['contraseña']);
-        $usuario=ejecutarSQL($query,$valor);//SUpongo que es un array, pero con valor o solo indices?
-        if($usuario==NULL){
+        $a=ejecutarSQL($query,$valor);//SUpongo que es un array, pero con valor o solo indices?
+
+        if($a==NULL){
             echo "Autentificación fallida";
         }
         else{
             
-            $_SESSION["usuario"] = $usuario['rol'];
+            $_SESSION["usuario"] = $a['rol'];
         }
     
     } catch (PDOExeption $e) {
         echo ($e->getMessage());
     }
     //Version2
+
+   
 }
 
 
