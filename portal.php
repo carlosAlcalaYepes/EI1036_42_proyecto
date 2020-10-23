@@ -24,6 +24,7 @@ include(dirname(__FILE__)."/includes/table2html.php");
 
 include(dirname(__FILE__)."/includes/registrar_usuario.php");
 include(dirname(__FILE__)."/includes/autentificar_usuario.php");
+include(dirname(__FILE__)."/includes/insertar_producto.php");
 
 
 if (isset($_REQUEST['action'])) $action = $_REQUEST["action"];
@@ -51,10 +52,10 @@ switch ($action) {
         $central = table2html("productos"); //tabla productos
         break;
     case "registrar_producto":
-        $central = "<p>Todavia no puedo registrar productos</p>"; //formulario producto
+        $central = "/partials/registrar_producto.php";; //formulario producto
         break;
     case "insertar_producto":
-        $central = "<p>Todavía no puedo insertar productos en la BD</p>"; //tabla productos
+        $central = insertar_producto("producto"); //tabla productos
         break;
     case "ver_cesta":
         $central = "<p>Todavia no puedo ver la cesta</p>"; //cesta en $_SESSION["cesta"]

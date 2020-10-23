@@ -10,9 +10,9 @@
 		 placeholder="Miguel" />
 		<br/>
 
-		<label for="apellido">Apellidos</label>
+		<label for="apellidos">Apellidos</label>
 		<br/>
-		<input type="text" name="apellido" class="item_requerid" size="20" maxlength="50" value=""
+		<input type="text" name="apellidos" class="item_requerid" size="20" maxlength="50" value=""
 		 placeholder="Alcala" />
 		<br/>
 
