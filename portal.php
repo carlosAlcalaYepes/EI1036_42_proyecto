@@ -6,7 +6,7 @@
  * *
  * * 
  * *
- * * @author  Maria Jesús
+ * * @author  Maria Jesús y Carlos Alcalá Yepes
  * * @copyright 2020 Rafa B.
  * * @license http://www.fsf.org/licensing/licenses/gpl.txt GPL 2 or later
  * * @version 1
