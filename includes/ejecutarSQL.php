@@ -13,7 +13,7 @@ function ejecutarSQL($query, $valor) {
         echo "Failed to get DB handle: " . $e->getMessage() . "\n";
         return NULL;
     }
-    return $a;
+    return ($consult->fetchAll(PDO::FETCH_ASSOC));
 }
 
 ?>

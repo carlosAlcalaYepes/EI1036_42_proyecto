@@ -34,9 +34,12 @@ function autentificar_usuario()
             echo "Autentificación fallida";
         }
         else{
-            
+            //print_r($a);
             $_SESSION["usuario"] = $a[0]['rol'];
             $_SESSION["id_usuario"] = $a[0]['id_cliente'];
+
+            //print_r($_SESSION["usuario"]);
+            //print_r($_SESSION["id_usuario"]);
         }
     
     } catch (PDOExeption $e) {

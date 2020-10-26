@@ -1,6 +1,6 @@
 <main>
 	<h1>Datos de registro: </h1>
-	<form class="form_usuario" action="?action=registrar_usuario" method="POST">
+	<form class="form_usuario" action="?action=insertar_usuario" method="POST">
 
 		<legend>Datos básicos</legend>
 
@@ -28,12 +28,6 @@
 		 placeholder="Requena" />
 		<br/>
 
-		<label for="email">Email</label>
-		<br/>
-		<input type="text" name="email" class="item_requerid" size="20" maxlength="25" value=""
-		 placeholder="kiko@ic.es" />
-		<br/>
-
 		<label for="zip_code">Zip Code</label>
 		<br/>
 		<input type="text" name="zip_code" class="item_requerid" size="20" maxlength="5" value=""
@@ -46,9 +40,9 @@
 		 placeholder="" />
 		<br/>
 
-		<label for="contraseña">Clave</label>
+		<label for="contraseña">Contraseña</label>
 		<br/>
-		<input type="password" name="contraseña" class="item_requerid" size="8" maxlength="25" value=""
+		<input type="password" name="contraseña" class="item_requerid" size="20" maxlength="25" value=""
 		/>
 	
 		
