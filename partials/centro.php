@@ -1,1 +1,3 @@
-<h1> <img src="./img/fruta_logo.png" id="logo" alt="logo" /></h1>
+<table>
+    <th> Bienvenidos a nuestra pagina</th>
+</table>

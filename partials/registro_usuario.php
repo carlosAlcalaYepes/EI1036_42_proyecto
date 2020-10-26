@@ -1,8 +1,8 @@
 <main>
-	<h1>Datos de registro: </h1>
 	<form class="form_usuario" action="?action=insertar_usuario" method="POST">
 
-		<legend>Datos básicos</legend>
+		<legend>Datos registro</legend>
+		<br/>
 
 		<label for="nombre">Nombre</label>
 		<br/>

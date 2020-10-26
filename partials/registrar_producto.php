@@ -1,9 +1,9 @@
 <main>
-	<h1>Datos de registro: </h1>
 	<form class="form_producto" action="?action=registrar_producto" method="POST">
 
-		<legend>Datos básicos</legend>
-
+		<legend>Datos registro</legend>
+		<br/>
+		
 		<label for="nombre">Nombre</label>
 		<br/>
 		<input type="text" name="nombre" class="item_requerid" size="20" maxlength="25" value=""
