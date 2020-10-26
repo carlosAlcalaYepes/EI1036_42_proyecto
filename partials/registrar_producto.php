@@ -7,12 +7,12 @@
 		<label for="nombre">Nombre</label>
 		<br/>
 		<input type="text" name="nombre" class="item_requerid" size="20" maxlength="25" value=""
-		 placeholder="Miguel" />
+		 placeholder="Peras 1 kilo" />
 		<br/>
 
-		<label for="foto_file">Foto</label>
+		<label for="imagen">Foto</label>
 		<br/>
-		<input type="text" name="foto_file" class="item_requerid" size="20" maxlength="25" value=""
+		<input type="text" name="imagen" class="item_requerid" size="20" maxlength="25" value=""
 		 placeholder="" />
 		<br/>
 	

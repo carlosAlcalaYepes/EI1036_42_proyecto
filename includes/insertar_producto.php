@@ -4,16 +4,16 @@ function insertar_producto($table)
 {
     global $pdo;
 
-    $datos = $_REQUEST;
-    if (count($_REQUEST) < 8) {
+    $datos = $_POST;
+    if (count($_POST) < 2) {
         $data["error"] = "No has rellenado el formulario correctamente";
         return;
     }
-    $query = "INSERT INTO $table (nombre, foto_file)
+    $query = "INSERT INTO $table (nombre, imagen)
                           VALUES (?,?)";
     try { 
         $consult = $pdo -> prepare($query);
-        $a = $consult->execute(array($_REQUEST['nombre'], $_REQUEST['foto_file']));
+        $a = $consult->execute(array($_REQUEST['nombre'], $_REQUEST['imagen']));
 
         if (1>$a) echo "<h1> Inserción incorrecta </h1>";
         else echo "<h1> Producto registrado! </h1>";
