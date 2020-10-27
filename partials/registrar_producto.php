@@ -1,5 +1,5 @@
 <main>
-	<form class="form_producto" action="?action=registrar_producto" method="POST">
+	<form class="form_producto" action="?action=insertar_producto" method="POST">
 
 		<legend>Datos registro</legend>
 		<br/>

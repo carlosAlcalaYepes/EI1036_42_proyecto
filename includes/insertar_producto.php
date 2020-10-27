@@ -5,10 +5,6 @@ function insertar_producto($table)
     global $pdo;
 
     $datos = $_POST;
-    if (count($_POST) < 2) {
-        $data["error"] = "No has rellenado el formulario correctamente";
-        return;
-    }
     $query = "INSERT INTO $table (nombre, imagen)
                           VALUES (?,?)";
     try { 

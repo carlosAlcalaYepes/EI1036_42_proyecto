@@ -52,7 +52,7 @@ switch ($action) {
         $central = table2html("producto"); //tabla productos
         break;
     case "registrar_producto":
-        $central = "/partials/registrar_producto.php";; //formulario producto
+        $central = "/partials/registrar_producto.php"; //formulario producto
         break;
     case "insertar_producto":
         $central = insertar_producto("producto"); //tabla productos

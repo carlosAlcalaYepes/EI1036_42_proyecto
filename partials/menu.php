@@ -6,13 +6,14 @@
 		<li>
 			<a href="?action=listar_productos">Productos</a>
 		</li>
+
 		<?php 
 		
 		 if (!isset($_SESSION['usuario'])){
 			echo '<li><a href="?action=login">Autentificar</a></li>';
 			echo '<li><a href="?action=registrar_usuario">Registrarme</a></li>';
 		 }
-		elseif (isset($_SESSION['usuario']) and $_SESSION['usuario'] == 'admin')
+		elseif (isset($_SESSION['usuario']) and $_SESSION['usuario'] == 'administrador')
 			echo '<li><a href="?action=registrar_producto">Registrar Producto</a></li>';
 		elseif (isset($_SESSION['usuario']))
 		    echo '<li><a href="?action=ver_cesta">Cesta de Compra</a></li>';
