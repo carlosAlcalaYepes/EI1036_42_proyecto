@@ -37,6 +37,7 @@ function ver_cesta()
                             
             }
             //boton de borrar
+
             $string= "?action=borrar&producto_borrar=".$linea;
             //echo $string;
             echo "<form action='$string' method='POST'>
