@@ -12,7 +12,7 @@
 
 		<label for="imagen">Foto</label>
 		<br/>
-		<input type="text" name="imagen" class="item_requerid" size="20" maxlength="25" value=""
+		<input type="text" name="imagen" class="item_requerid" size="20" maxlength="500" value=""
 		 placeholder="" />
 		<br/>
 	

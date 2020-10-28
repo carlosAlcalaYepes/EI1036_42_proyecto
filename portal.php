@@ -25,7 +25,7 @@ include(dirname(__FILE__)."/includes/table2html.php");
 include(dirname(__FILE__)."/includes/registrar_usuario.php");
 include(dirname(__FILE__)."/includes/autentificar_usuario.php");
 include(dirname(__FILE__)."/includes/insertar_producto.php");
-
+include(dirname(__FILE__)."/includes/ver_cesta.php");
 
 if (isset($_REQUEST['action'])) $action = $_REQUEST["action"];
 else $action = "home";
@@ -58,15 +58,25 @@ switch ($action) {
         $central = insertar_producto("producto"); //tabla productos
         break;
     case "ver_cesta":
-        $central = "<p>Todavia no puedo ver la cesta</p>"; //cesta en $_SESSION["cesta"]
+        $central = ver_cesta(); //cesta en $_SESSION["cesta"]
         break;
     case "encestar":
-        $central = "<p>Todavía no puedo añadir a la cesta</p>"; //tabla compras
+        array_push($_SESSION['cesta'],$_REQUEST["producto"]);
+        //print_r($_SESSION['cesta']);
+        //$central=encestar_producto($id_usuario,$producto); pensamos que esto no hace falta.
+        //$central = "<p>Todavía no puedo añadir a la cesta</p>"; //tabla compras
+        $central = table2html("producto");
+        break;
+    case "borrar":
+        unset($_SESSION['cesta'][$_REQUEST["producto_borrar"]]);
+        //print_r($_SESSION['cesta']);
+        $central = ver_cesta();
         break;
     case "realizar_compra":
         $central = "<p>Todavía no puedo añadir a la cesta</p>"; //cesta en $_SESSION["cesta"]
         break;
     default:
+        echo"Error";
         $data["error"] = "Accion No permitida";
         $central = "/partials/centro.php";
 }

@@ -122,9 +122,19 @@ section#blog {
 .botonleermas {
     font-size: 80%;
     font-weight: bold;
-    margin-bottom: 10px;
     text-align: right;
+    background-color: #46d839;
+   margin-bottom: 10px;
 }
+
+.botonleermas2 {
+    font-size: 80%;
+    font-weight: bold;
+    text-align: right;
+    background-color: #d83838;
+    margin-bottom: 10px;
+}
+ 
 
 .izq {
     float: left;
