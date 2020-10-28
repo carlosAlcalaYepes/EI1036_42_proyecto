@@ -62,14 +62,14 @@ switch ($action) {
         break;
     case "encestar":
         array_push($_SESSION['cesta'],$_REQUEST["producto"]);
-        //print_r($_SESSION['cesta']);
+        print_r($_SESSION['cesta']);
         //$central=encestar_producto($id_usuario,$producto); pensamos que esto no hace falta.
         //$central = "<p>Todavía no puedo añadir a la cesta</p>"; //tabla compras
         $central = table2html("producto");
         break;
     case "borrar":
-        unset($_SESSION['cesta'][$_REQUEST["producto_borrar"]]);
-        //print_r($_SESSION['cesta']);
+        unset($_SESSION['cesta'][$_POST['producto_borrar']]);
+        print_r($_SESSION['cesta']);
         $central = ver_cesta();
         break;
     case "realizar_compra":
