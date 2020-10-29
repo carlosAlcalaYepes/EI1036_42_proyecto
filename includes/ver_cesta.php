@@ -48,6 +48,11 @@ function ver_cesta()
             print "</tr>";
         }
         print "</table>";
+        $compra ="?action=realizar_compra";
+        echo "<form action='$compra' method='POST'>
+            <td><button class='botonleermas3' type='submit'> Comprar</button></td>
+            </form>
+            ";
     }  
     else print "<h1> No hay resultados </h1>"; 
 }
