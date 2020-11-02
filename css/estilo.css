@@ -91,6 +91,25 @@ th {
 td, th { border: 1px solid;padding:1px;width: 10%; text-align: center; }
 td { border-bottom:1px dotted #BDB76B; }
 
+.ventanaImagen{
+    border: 2px solid black;
+    border-radius: 8px;
+    text-align: center;
+    margin: 5px auto;
+}
+
+.x {
+    line-height: 12px;
+    width: 18px;
+    font-size: 8pt;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-left: 2px;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
 
 #registro a:hover {
     color: blue;
