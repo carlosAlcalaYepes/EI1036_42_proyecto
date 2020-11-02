@@ -153,6 +153,16 @@ section#blog {
     background-color: #d83838;
     margin-bottom: 10px;
 }
+
+.botonleermas3 {
+    font-size: 120%;
+    font-weight: bold;
+    text-align: center;
+    background-color: #46d839;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto; 
+}
  
 
 .izq {

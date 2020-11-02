@@ -26,6 +26,7 @@ include(dirname(__FILE__)."/includes/registrar_usuario.php");
 include(dirname(__FILE__)."/includes/autentificar_usuario.php");
 include(dirname(__FILE__)."/includes/insertar_producto.php");
 include(dirname(__FILE__)."/includes/ver_cesta.php");
+include(dirname(__FILE__)."/includes/comprar.php");
 
 if (isset($_REQUEST['action'])) $action = $_REQUEST["action"];
 else $action = "home";
@@ -75,7 +76,7 @@ switch ($action) {
         $central = ver_cesta();
         break;
     case "realizar_compra":
-        $central = "<p>Todavía no puedo añadir a la cesta</p>"; //cesta en $_SESSION["cesta"]
+        $central = comprar(); //cesta en $_SESSION["cesta"]
         break;
     default:
         echo"Error";
