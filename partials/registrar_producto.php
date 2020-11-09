@@ -9,13 +9,19 @@
 		<label for="nombre">Nombre</label>
 		<br/>
 		<input type="text" name="nombre" class="item_requerid" size="20" maxlength="25" value=""
-		 placeholder="Peras 1 kilo" />
+		 placeholder="Peras 1 kilo" required/>
+		<br/>
+
+		<label for="precio">Precio</label>
+		<br/>
+		<input type="number" step="0.01" name="precio" class="item_requerid" size="20" min="0.01" value=""
+		 placeholder="0.50" required/>
 		<br/>
 
 		<label for="imagen">Foto</label>
 		<br/>
 		<input type="text" name="imagen" class="item_requerid" size="20" maxlength="500" value=""
-		 placeholder="" />
+		 placeholder="" required/>
 		<br/>
 		<br/>
 		
@@ -30,7 +36,7 @@
 			<form action="?action=upload" method="post" enctype="multipart/form-data">
 			Selecciona	una	imagen:
 			<br/>
-			<input onchange= "handleFiles(event)" type="file" accept="image/*" name="tmp_file" id="upload">
+			<input id="imagen" oninput="validarimagen()" onchange= "handleFiles(event)" type="file" accept="image/*" name="tmp_file" id="upload">
 			<br/>
 			<canvas id="canvas" width="100" height="100"></canvas>
 			<br/>

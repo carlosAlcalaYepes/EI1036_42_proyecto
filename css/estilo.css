@@ -194,3 +194,13 @@ legend{
     margin-bottom: 10px;
     color: rgb(165, 135, 4);
 }
+
+#pContra {
+    color: #d83838;
+}
+
+#X{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
