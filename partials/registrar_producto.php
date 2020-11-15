@@ -20,8 +20,8 @@
 
 		<label for="imagen">Foto</label>
 		<br/>
-		<input type="text" name="imagen" class="item_requerid" size="20" maxlength="500" value=""
-		 placeholder="" required/>
+		<input type="text" name="imagen" class="item_requerid" size="20" maxlength="500" value="URL"
+		 placeholder="URL" required/>
 		<br/>
 		<br/>
 		
@@ -36,11 +36,11 @@
 			<form action="?action=upload" method="post" enctype="multipart/form-data">
 			Selecciona	una	imagen:
 			<br/>
-			<input id="imagen" oninput="validarimagen()" onchange= "handleFiles(event)" type="file" accept="image/*" name="tmp_file" id="upload">
+			<input id="imagen" oninput="validarimagen()" onchange= "handleFiles(event)" type="file" accept="image/*" name="fileToUpload" id="upload">
 			<br/>
 			<canvas id="canvas" width="100" height="100"></canvas>
 			<br/>
-			<input type="submit" value="SUBIR" name="submit">
+			<input onclick="cerrar()" type="submit" value="SUBIR" name="submit">
 			</form>
 		</div>
 </main>

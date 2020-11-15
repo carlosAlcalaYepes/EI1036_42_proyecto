@@ -96,18 +96,21 @@ td { border-bottom:1px dotted #BDB76B; }
     border-radius: 8px;
     text-align: center;
     margin: 5px auto;
+    width: 400px;
+  
 }
 
-.x {
+#X {
     line-height: 12px;
-    width: 18px;
+    /*width: 18px;*/
     font-size: 8pt;
     font-family: tahoma;
     margin-top: 1px;
-    margin-left: 2px;
-    position:absolute;
-    top:0;
-    left:0;
+    margin-left: 1px;
+    margin-right: 1px;
+    position: relative;
+    top:0px;
+    left: 185px;
 }
 
 
@@ -199,8 +202,3 @@ legend{
     color: #d83838;
 }
 
-#X{
-    position: absolute;
-    right: 0;
-    top: 0;
-}
