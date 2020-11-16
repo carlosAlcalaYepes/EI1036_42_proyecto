@@ -72,18 +72,20 @@ switch ($action) {
         //unset($_SESSION['cesta'][$_REQUEST["producto_borrar"]]);
         foreach (array_keys($_SESSION['cesta'], $_REQUEST["producto_borrar"]) as $key) {
             unset($_SESSION['cesta'][$key]);
-        break;
+            break;
         }
 
         $central = ver_cesta();
         break;
     case "realizar_compra":
+        //lee de la url y lo mete en $_SESSION['cesta']
         $central = comprar(); //cesta en $_SESSION["cesta"]
         break;
     case "upload":
         upload();
+        $central = "/partials/registrar_producto.php";
         break;
-
+        
     default:
         echo"Error";
         $data["error"] = "Accion No permitida";

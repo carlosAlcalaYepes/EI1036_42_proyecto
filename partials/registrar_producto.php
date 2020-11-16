@@ -1,6 +1,7 @@
 
 <main class="form_producto">
 	<script type="text/javascript" src="/javaScript/subirFichero.js"></script>
+	<script type="text/javascript" src="/javaScript/validacion.js"></script>
 	<form  action="?action=insertar_producto" method="POST">
 
 		<legend>Datos registro</legend>

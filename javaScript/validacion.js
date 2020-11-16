@@ -1,51 +1,50 @@
-//nombre
-//apellidos
-//direccion
-//ciudad
-//zip_code
-//foto
 
-var boton = 
+var boton = true;
 
 function validarcontraseña(){
     let nodo=document.getElementById('contraseña');
     let contraseña=nodo.value;
 
-    if(contraseña.length<8){
-        nodo.style.color="red";
-    }
 
+    var mayuscula=false
+    var minuscula=false
+    var numero=false
+    let parrafo=document.getElementById("pContra")
     for(var i =0;i<contraseña.length;i++ ){
-        
-        var mayuscula=false
-        var minuscula=false
-        var numero=false
 
         if(contraseña.charCodeAt(i)>=65 && contraseña.charCodeAt(i)<=90){
             mayuscula=true
         }
-        else if (contraseña.charCodeAt(i)>=97 && contraseña.charCodeAt(i)<=122){
+        if (contraseña.charCodeAt(i)>=97 && contraseña.charCodeAt(i)<=122){
             minuscula=true
         }
-        else if(contraseña.charCodeAt(i)>=48 && contraseña.charCodeAt(i)<=57){
+        if(contraseña.charCodeAt(i)>=48 && contraseña.charCodeAt(i)<=57){
             numero=true
         }
     }
 
     if(mayuscula==false){
-        let parrafo=document.getElementById("pContra")
         parrafo.textContent="Hace falta una mayuscula"
-        boton = false
+        //boton = false
     }
-    else if(minuscula==false){
-        let parrafo=document.getElementById("pContra")
+    if(minuscula==false){
         parrafo.textContent="Hace falta una minuscula"
-        boton = false
+        //boton = false
     }
-    else if(numero==false){
-        let parrafo=document.getElementById("pContra")
-        parrafo.textContent="Hace falta un numero"
-        boton = false
+    if(numero==false){
+        parrafo.textContent="Hace falta un número"
+        //boton = false
+    }
+    if(contraseña.length<8){
+        parrafo.textContent="Debe tener al menos 8 caracteres"
+    }
+    
+    if(mayuscula==true && minuscula==true && numero==true && contraseña.length>=8){
+        parrafo.textContent="";
+        nodo.style.color="green";
+    }
+    else{
+        nodo.style.color="red";
     }
 }
 

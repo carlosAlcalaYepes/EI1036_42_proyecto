@@ -11,6 +11,10 @@ function cerrar(){
     document.getElementById('ventanaImagen').style.display = 'none';
 }
 
+function cerrar2(){
+    document.getElementById('cestaCompra').style.display = 'none';
+}
+
 function abrirForm(){
     document.getElementById('ventanaImagen').style.display = 'block';
 }

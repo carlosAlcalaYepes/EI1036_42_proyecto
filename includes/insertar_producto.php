@@ -22,10 +22,14 @@ function insertar_producto($table)
     }
     else{
         try { 
-            print_r($_SESSION['foto']);
+            
             $consult = $pdo -> prepare($query);
             $a = $consult->execute(array($_REQUEST['nombre'],$_SESSION['foto'], $_REQUEST['precio']));
-            if (1>$a) echo "<h1> Inserción incorrecta de la imagen</h1>";
+            if (1>$a) {
+                echo "<h1> Inserción incorrecta de la imagen</h1>";
+                //elimino la foto de la variable
+                $_SESSION['foto']=null;
+            }
             else echo "<h1> Producto registrado! </h1>";
         
         } catch (PDOExeption $e) {

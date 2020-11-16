@@ -1,6 +1,6 @@
 <main>
 	<form class="form_usuario" action="?action=insertar_usuario" method="POST">
-
+	<script type="text/javascript" src="/javaScript/validacion.js"></script>
 		<legend>Datos registro</legend>
 		<br/>
 
@@ -45,9 +45,6 @@
 		<input id="contraseña" oninput="validarcontraseña()" type="password" name="contraseña" class="item_requerid" size="20" maxlength="25" value=""
 		required/>
 		<p id="pContra"></p>
-
-	
-		
 	
 		<br/>
 		<p><input id="enviar" type="submit" value="Enviar">

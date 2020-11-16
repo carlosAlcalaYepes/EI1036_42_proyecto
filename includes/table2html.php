@@ -1,4 +1,7 @@
 <?php
+print"<script type='text/javascript' src='/javaScript/verCesta.js'></script>";
+print"<script type='text/javascript' src='/javaScript/subirFichero.js'></script>";
+
 error_reporting(0);
 function table2html($table)
 {
@@ -31,9 +34,26 @@ function table2html($table)
             <td><button class='botonleermas' type='submit'> Añadir</button></td>
             </form>
             ";
+            //boton, que modifique localStorage
+
+
             print "</tr>";
         }
         print "</table>";
+        print"
+        <div class='cestaCompra' id='cestaCompra' style='display:none'>
+			<button type = 'button' id='X' onclick='cerrar2()'> X </button>
+			<form action='?action=upload' method='post' enctype='multipart/form-data'>
+			Selecciona	una	imagen:
+			<br/>
+			<input id='imagen' oninput='validarimagen()' onchange= 'handleFiles(event)' type='file' accept='image/*' name='fileToUpload' id='upload'>
+			<br/>
+			<canvas id='canvas' width='100' height='100'></canvas>
+			<br/>
+			<input onclick='cerrar()' type='submit' value='SUBIR' name='submit'>
+			</form>
+		</div>";
+
     } 
     else
         print "<h1> No hay resultados </h1>"; 

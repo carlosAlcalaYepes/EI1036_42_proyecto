@@ -1,3 +1,4 @@
+<script type="text/javascript" src="/javaScript/verCesta.js"></script>
 <nav>
 	<ul>
 		<li>
@@ -16,7 +17,8 @@
 		elseif (isset($_SESSION['usuario']) and $_SESSION['usuario'] == 'administrador')
 			echo '<li><a href="?action=registrar_producto">Registrar Producto</a></li>';
 		elseif (isset($_SESSION['usuario']))
-		    echo '<li><a href="?action=ver_cesta">Cesta de Compra</a></li>';
+		 	echo '<button onclick="verCesta()">Cesta de compra</button>'
+		//    echo '<li><a href="?action=ver_cesta">Cesta de Compra</a></li>';
         ?>
 	</ul>
 </nav>

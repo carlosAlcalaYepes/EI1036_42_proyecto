@@ -12,6 +12,7 @@ function comprar()
         $hoy = getdate();
         $fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
 
+        
         foreach($_SESSION['cesta'] as $id){
             $a = $consult->execute(array($fecha, $_SESSION["id_usuario"], $id));
         }
