@@ -19,7 +19,45 @@ function comprar()
 
         if (1>$a) echo "<h1> Inserción incorrecta </h1>";
         else{
-            echo "<h1> La compra se ha realizado correctamente! </h1>";
+            //compra realizada
+            global $pdo;
+
+            $query = "SELECT * FROM  producto;";
+            
+            $rows = $pdo->query($query)->fetchAll(\PDO::FETCH_ASSOC);
+
+            if (is_array($rows)){
+            
+                print '<table><thead>';
+                foreach($rows[0] as $key => $value) {
+                    echo "<th>", $key,"</th>";
+                }
+                print "</thead>";
+
+                $query = "SELECT * FROM  producto where id_producto=?;";
+
+                foreach ($_SESSION['cesta'] as $linea) {
+                    $valor = array($linea);
+
+                    $a=ejecutarSQL($query,$valor);
+                    
+                    print "<tr>";
+                    $contar = 0;
+                    foreach ($a[0] as $val) {
+                        //Si es el campo imagen se trata distinto
+                        if($contar==2){
+                            echo "<td><img src='$val' width='150' height='90'/> </td>";
+                        }
+                        else echo "<td>", $val, "</td>";
+                        $contar = $contar + 1;              
+                    }
+                    
+                    print "</tr>";
+                }
+                print "</table>";
+                
+            }  
+            else print "<h1> No hay resultados </h1>"; 
             $_SESSION["cesta"] = array();
         } 
     

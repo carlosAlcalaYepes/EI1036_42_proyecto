@@ -202,3 +202,34 @@ legend{
     color: #d83838;
 }
 
+.cestaCompra{
+    background-color:#f8f4dc;
+    background-color:#FFFFE0;
+    border-collapse:collapse;
+    color:#000;
+    text-align: center;
+    border-radius: 8px;
+
+}
+
+.boton{
+    background-color:red; 
+    border-radius:5px; 
+    float: right; 
+    text-decoration:none; 
+    display:block; 
+    padding:2px
+}
+
+#XX {
+    line-height: 12px;
+    /*width: 18px;*/
+    font-size: 8pt;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
+    position: relative;
+    top:0px;
+    left: 185px;
+}

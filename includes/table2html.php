@@ -1,6 +1,5 @@
 <?php
 print"<script type='text/javascript' src='/javaScript/verCesta.js'></script>";
-print"<script type='text/javascript' src='/javaScript/subirFichero.js'></script>";
 
 error_reporting(0);
 function table2html($table)
@@ -29,10 +28,11 @@ function table2html($table)
                 $contar = $contar + 1;               
             }
             //deberiamos comprobar si el producto ya esta en la cesta y marcarlo de alguna manera.
-            $string= "?action=encestar&id_usuario=".$_SESSION['id_usuario']."&producto=".$row['id_producto'];
-            echo "<form action='$string' method='POST'>
-            <td><button class='botonleermas' type='submit'> Añadir</button></td>
-            </form>
+            //$string= "?action=encestar&id_usuario=".$_SESSION['id_usuario']."&producto=".$row['id_producto'];
+            $id_producto=$row['id_producto'];
+            echo "
+            <td><button  class='botonleermas' type='submit' onclick='anyadir(this)' id='$id_producto'> Añadir</button></td>
+
             ";
             //boton, que modifique localStorage
 
@@ -42,16 +42,13 @@ function table2html($table)
         print "</table>";
         print"
         <div class='cestaCompra' id='cestaCompra' style='display:none'>
-			<button type = 'button' id='X' onclick='cerrar2()'> X </button>
-			<form action='?action=upload' method='post' enctype='multipart/form-data'>
-			Selecciona	una	imagen:
-			<br/>
-			<input id='imagen' oninput='validarimagen()' onchange= 'handleFiles(event)' type='file' accept='image/*' name='fileToUpload' id='upload'>
-			<br/>
-			<canvas id='canvas' width='100' height='100'></canvas>
-			<br/>
-			<input onclick='cerrar()' type='submit' value='SUBIR' name='submit'>
-			</form>
+            <button type = 'button' id='XX' onclick='cerrarCesta()'> X </button>
+            <ul id='cesta'>
+
+            </ul>
+            <form id='formulario' method='GET'>
+            <td><button class='botonleermas3' type='submit'> Comprar</button></td>
+            </form>
 		</div>";
 
     } 
