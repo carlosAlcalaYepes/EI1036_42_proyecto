@@ -79,7 +79,7 @@ switch ($action) {
         break;
     case "realizar_compra":
         //lee de la url y lo mete en $_SESSION['cesta']
-        $_SESSION['cesta']=$_REQUEST['producto_cesta'];
+        $_SESSION['cesta']=$_REQUEST['productos_cesta'];
         
         $central = comprar(); //cesta en $_SESSION["cesta"]
         break;

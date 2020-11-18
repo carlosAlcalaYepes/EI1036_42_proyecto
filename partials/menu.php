@@ -17,7 +17,8 @@
 		elseif (isset($_SESSION['usuario']) and $_SESSION['usuario'] == 'administrador')
 			echo '<li><a href="?action=registrar_producto">Registrar Producto</a></li>';
 		elseif (isset($_SESSION['usuario']))
-		 	echo '<button onclick="verCesta()">Cesta de compra</button>'
+			 //echo '<button onclick="verCesta()">Cesta de compra</button>'
+			 echo '<img src="../img/cesta_negra.jpg" onclick="verCesta()" width="42" height="42" style="vertical-align:middle"/>'
 		//    echo '<li><a href="?action=ver_cesta">Cesta de Compra</a></li>';
         ?>
 	</ul>

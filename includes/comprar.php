@@ -12,14 +12,17 @@ function comprar()
         $hoy = getdate();
         $fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
 
+        $array = explode(",", $_SESSION['cesta']);
         
-        foreach($_SESSION['cesta'] as $id){
+
+        foreach($array as $id){
             $a = $consult->execute(array($fecha, $_SESSION["id_usuario"], $id));
         }
 
         if (1>$a) echo "<h1> Inserción incorrecta </h1>";
         else{
             //compra realizada
+            echo "<h1> Compra realizada correctamente. Los productos comprados son: </h1>";
             global $pdo;
 
             $query = "SELECT * FROM  producto;";
@@ -36,7 +39,7 @@ function comprar()
 
                 $query = "SELECT * FROM  producto where id_producto=?;";
 
-                foreach ($_SESSION['cesta'] as $linea) {
+                foreach ($array as $linea) {
                     $valor = array($linea);
 
                     $a=ejecutarSQL($query,$valor);

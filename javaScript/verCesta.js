@@ -1,6 +1,5 @@
 (function(){
-    let lista = JSON.parse(localStorage.getItem('cesta'))
-
+    let lista = JSON.parse(localStorage.getItem('localcesta'))
     if(lista && lista.length>0)
       lista.forEach(producto => anyadir(producto))
 })()
@@ -23,16 +22,8 @@ function anyadir(producto){
     
     nodo.appendChild(span)
 
-    let lista = document.querySelectorAll('.producto_cesta')
-    lista = Array.from(lista).map(n => n.textContent)
-    localStorage.setItem('cesta', JSON.stringify(lista))
+    
 
-    let form = document.getElementById('formulario')
-    let accion ='?action=realizar_compra&productos_cesta=' + JSON.stringify(lista)
-    form.setAttribute('action', accion)
-
-    console.log(JSON.stringify(lista))
-  
     let boton = document.createElement('button')
     boton.textContent = 'Eliminar'
     nodo.appendChild(boton)
@@ -40,6 +31,31 @@ function anyadir(producto){
     boton.classList.add('boton')
   
     document.getElementById('cesta').appendChild(nodo)
+
+
+
+    let lista = document.querySelectorAll('.producto_cesta')
+    lista = Array.from(lista).map(n => n.textContent)
+    localStorage.setItem('localcesta', JSON.stringify(lista))
+
+    /*Prubas*/
+    var a=JSON.stringify(lista)
+    
+
+    let var1="]"
+    let var2="["
+    a=a.replace(var2,"")
+    a=a.replace(var1,"")
+    a=a.replace(/"/g,"")
+
+    console.log(a)
+    /*pruebas*/
+    let form = document.getElementById('formulario')
+    //let accion = form.getAttribute('action')
+    let accion = '?action=realizar_compra&productos_cesta=' + a
+
+    form.setAttribute('action', accion)
+
 
 }
 
@@ -50,9 +66,21 @@ function eliminar(){
     lista = Array.from(lista).map(n => n.textContent)
     localStorage.setItem('cesta', JSON.stringify(lista))
 
+    /*Prubas*/
+    var a=JSON.stringify(lista)
+    let var1="]"
+    let var2="["
+    a=a.replace(var2,"")
+    a=a.replace(var1,"")
+    a=a.replace(/"/g,"")
+
+    /*pruebas*/
+
     let form = document.getElementById('formulario')
-    let accion ='?action=realizar_compra&productos_cesta=' + JSON.stringify(lista)
-    form.setAttribute("action", accion)
+    //let accion = form.getAttribute('action')
+    let accion = '?action=realizar_compra&productos_cesta=' + a
+
+    form.setAttribute('action', accion)
 
   }
 
@@ -67,7 +95,7 @@ function comprar(){
 }
 
 function verCesta(){
-    document.getElementById('cestaCompra').style.display = 'inline';
+    document.getElementById('cestaCompra').style.display = 'block';
 }
 
 function cerrarCesta(){
