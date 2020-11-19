@@ -49,7 +49,7 @@ function table2html($table)
 
             </ul>
             <form action='?action=realizar_compra&productos_cesta=' id='formulario' method='POST'>
-            <td><button class='botonleermas3' type='submit'> Comprar</button></td>
+            <td><button onclick='borarrLocalStorage()' class='botonleermas3' type='submit'> Comprar</button></td>
             </form>
 		</div>";
 

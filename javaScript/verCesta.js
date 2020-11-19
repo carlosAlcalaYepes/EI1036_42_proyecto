@@ -90,7 +90,8 @@ function guardar(){
     localStorage.setItem('cesta', JSON.stringify(lista))
 }
 
-function comprar(){
+function borarrLocalStorage(){
+    console.log("borrado")
     localStorage.clear();
 }
 
