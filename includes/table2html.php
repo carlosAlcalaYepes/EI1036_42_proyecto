@@ -56,6 +56,7 @@ function table2html($table)
     } 
     else
         print "<h1> No hay resultados </h1>"; 
+    
 }
 
 ?>

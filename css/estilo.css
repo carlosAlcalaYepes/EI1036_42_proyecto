@@ -246,3 +246,15 @@ legend{
 }
 
 li{padding-bottom: 15px;}
+
+.visor {
+    background-color: lightblue;
+    width: 100px;
+    overflow-x: scroll;
+    display:flex;
+}
+
+.item {
+    margin: 5px;
+    background-color: darkblue;
+}

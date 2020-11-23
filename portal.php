@@ -28,7 +28,7 @@ include(dirname(__FILE__)."/includes/insertar_producto.php");
 include(dirname(__FILE__)."/includes/ver_cesta.php");
 include(dirname(__FILE__)."/includes/comprar.php");
 include(dirname(__FILE__)."/includes/upload.php");
-
+include(dirname(__FILE__)."/javaScript/visor.js");
 
 if (isset($_REQUEST['action'])) $action = $_REQUEST["action"];
 else $action = "home";
@@ -52,7 +52,10 @@ switch ($action) {
         $central = registrar_usuario("cliente"); //tabla usuarios
         break;
     case "listar_productos":
-        $central = table2html("producto"); //tabla productos
+        //$central = table2html("producto"); //tabla productos
+        echo"<div class='visor'>
+            
+        </div>";
         break;
     case "registrar_producto":
         $central = "/partials/registrar_producto.php"; //formulario producto
@@ -95,6 +98,17 @@ switch ($action) {
 }
 
 if ($central <> "") include(dirname(__FILE__).$central);
+
+echo "<script>
+    fetch('/datos.php')
+    .then(response => {
+        if (response.ok)
+            return response.json()
+        else
+            throw response.statusText
+    })
+    .then(data=> data.forEach(x => visor(x)))
+</script>";
 
 include(dirname(__FILE__)."/partials/footer.php");
 ?>
