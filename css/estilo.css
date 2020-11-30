@@ -249,12 +249,14 @@ li{padding-bottom: 15px;}
 
 .visor {
     background-color: lightblue;
-    width: 100px;
+    align-items: center;
+    width: 700px;
     overflow-x: scroll;
     display:flex;
 }
 
 .item {
-    margin: 5px;
+    margin: 10px;
+    width: 100px;
     background-color: darkblue;
 }

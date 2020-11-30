@@ -9,6 +9,18 @@
 		<p class="der"> Visit us at:12006 UJI </p>
 	</address>
 </footer>
+<script>
+    fetch('/datos.php')
+    .then(response => {
+        if (response.ok)
+            return response.json()
+        else
+            throw response.statusText
+    })
+	.then(data=>{data.forEach(x => visor(x)); 
+				data.forEach(x => insertarOpciones(x))})
+</script>
+
 </body>
 
 </html>

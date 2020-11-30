@@ -2,6 +2,7 @@
 print"<script type='text/javascript' src='/javaScript/verCesta.js'></script>";
 
 error_reporting(0);
+
 function table2html($table)
 {
     global $pdo;

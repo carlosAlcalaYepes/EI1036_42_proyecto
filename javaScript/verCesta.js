@@ -30,7 +30,9 @@ function anyadir(producto){
     boton.onclick = eliminar
     boton.classList.add('boton')
   
-    document.getElementById('cesta').appendChild(nodo)
+    if(nodo != null){
+        document.getElementById('cesta').appendChild(nodo)
+    }
 
 
 

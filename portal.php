@@ -21,6 +21,7 @@ include(dirname(__FILE__)."/partials/menu.php");
 
 include(dirname(__FILE__)."/includes/conector_BD.php");
 include(dirname(__FILE__)."/includes/table2html.php");
+include(dirname(__FILE__)."/includes/tablaVisor.php");
 
 include(dirname(__FILE__)."/includes/registrar_usuario.php");
 include(dirname(__FILE__)."/includes/autentificar_usuario.php");
@@ -28,7 +29,8 @@ include(dirname(__FILE__)."/includes/insertar_producto.php");
 include(dirname(__FILE__)."/includes/ver_cesta.php");
 include(dirname(__FILE__)."/includes/comprar.php");
 include(dirname(__FILE__)."/includes/upload.php");
-include(dirname(__FILE__)."/javaScript/visor.js");
+print"<script type='text/javascript' src='/javaScript/verCesta.js'></script>";
+print"<script type='text/javascript' src='/javaScript/visor.js'></script>";
 
 if (isset($_REQUEST['action'])) $action = $_REQUEST["action"];
 else $action = "home";
@@ -53,9 +55,7 @@ switch ($action) {
         break;
     case "listar_productos":
         //$central = table2html("producto"); //tabla productos
-        echo"<div class='visor'>
-            
-        </div>";
+        $central=tablaVisor();
         break;
     case "registrar_producto":
         $central = "/partials/registrar_producto.php"; //formulario producto
@@ -98,17 +98,6 @@ switch ($action) {
 }
 
 if ($central <> "") include(dirname(__FILE__).$central);
-
-echo "<script>
-    fetch('/datos.php')
-    .then(response => {
-        if (response.ok)
-            return response.json()
-        else
-            throw response.statusText
-    })
-    .then(data=> data.forEach(x => visor(x)))
-</script>";
 
 include(dirname(__FILE__)."/partials/footer.php");
 ?>
