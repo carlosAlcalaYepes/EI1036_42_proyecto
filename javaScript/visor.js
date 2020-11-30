@@ -9,7 +9,7 @@ function visor(x){
 
     let imagen=document.createElement("img")
     imagen.setAttribute("src",x["imagen"])
-    imagen.setAttribute("width","100")
+    imagen.setAttribute("width","150")
     imagen.setAttribute("height","100")
 
     let parrafo = document.createElement("p")
@@ -28,23 +28,32 @@ function visor(x){
     contenedor.appendChild(parrafo)
     contenedor.appendChild(boton)
 
-    if(contenedor!=null){
+    if(document.getElementById('visor') != null){
         document.getElementById('visor').appendChild(contenedor)
     }
+
 
 }
 
 function insertarOpciones(x){
         let n = document.createElement('option')
-        n.onselect = mostrarEnVisor
+        n.setAttribute("id", x["id_producto"])
+
+        n.setAttribute("onchange", "mostrarEnVisor()")
+
+        //n.onchange = mostrarEnVisor()
+
         n.value = x["nombre"]
-        document.getElementById('list').appendChild(n)
+        if(document.getElementById('list') != null){
+            document.getElementById('list').appendChild(n)
+        }   
 }
 
 
 function mostrarEnVisor(){
     console.log('mostrar')
+    
+    console.log(this)
     document.getElementById(Prod2ID[this.value]).scrollIntoView()
-    consola.log(Prod2ID[this.value])
 }
 

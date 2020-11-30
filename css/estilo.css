@@ -248,15 +248,15 @@ legend{
 li{padding-bottom: 15px;}
 
 .visor {
-    background-color: lightblue;
+    background-color: rgb(236, 243, 170);
     align-items: center;
-    width: 700px;
+    width: 1000px;
     overflow-x: scroll;
     display:flex;
 }
 
 .item {
     margin: 10px;
-    width: 100px;
-    background-color: darkblue;
+    width: 200px;
+    background-color:#FFFFE0;
 }

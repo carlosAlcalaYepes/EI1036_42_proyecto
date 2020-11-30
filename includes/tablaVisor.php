@@ -1,12 +1,13 @@
 <?php
 print"<script type='text/javascript' src='/javaScript/verCesta.js'></script>";
+print"<script type='text/javascript' src='/javaScript/visor.js'></script>";
 
 error_reporting(0);
 
 function tablaVisor(){
     
     print"
-    <input list='list' name='list'>
+    <input list='list' name='lista' id='lista' onchange='mostrarEnVisor(this)'>
     ";
     
     print"
@@ -15,7 +16,8 @@ function tablaVisor(){
     ";
 
 
-    print"<div class='visor' id='visor' >
+    print"
+    <div class='visor' id='visor' >
     </div>";
 
     //Cesta de compra
