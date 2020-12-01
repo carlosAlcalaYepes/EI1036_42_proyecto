@@ -1,9 +1,10 @@
 <?php
+include(dirname(__FILE__)."/includes/ejecutarSQL.php");
     header('Content-type: application/json');
     $min=$_REQUEST["min"];
     $max=$_REQUEST["max"];
 
-    echo"Comprobancion precios";
+    echo"Comprobacion precios";
     print_r($min);
     print_r($max);
 
