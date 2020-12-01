@@ -39,7 +39,7 @@ function insertarOpciones(x){
         let n = document.createElement('option')
         n.setAttribute("id", x["id_producto"])
 
-        n.setAttribute("onchange", "mostrarEnVisor()")
+        //n.setAttribute("onchange", "mostrarEnVisor()")
 
         //n.onchange = mostrarEnVisor()
 
@@ -50,10 +50,7 @@ function insertarOpciones(x){
 }
 
 
-function mostrarEnVisor(){
-    console.log('mostrar')
-    
-    console.log(this)
-    document.getElementById(Prod2ID[this.value]).scrollIntoView()
+function mostrarEnVisor(elem){
+    document.getElementById(Prod2ID[elem.value]).scrollIntoView()
 }
 

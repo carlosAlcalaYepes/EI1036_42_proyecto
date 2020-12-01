@@ -7,7 +7,7 @@ error_reporting(0);
 function tablaVisor(){
     
     print"
-    <input list='list' name='lista' id='lista' onchange='mostrarEnVisor(this)'>
+    <input list='list' name='list' onchange='mostrarEnVisor(this)'>
     ";
     
     print"
