@@ -51,6 +51,7 @@ function insertarOpciones(x){
 
 
 function mostrarEnVisor(elem){
-    document.getElementById(Prod2ID[elem.value]).scrollIntoView()
+   document.getElementById(Prod2ID[elem.value]).scrollIntoView()
+   
 }
 
