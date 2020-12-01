@@ -30,7 +30,7 @@ function anyadir(producto){
     boton.onclick = eliminar
     boton.classList.add('boton')
   
-    if(nodo != null){
+    if(nodo != null && document.getElementById('cesta')!=null){
         document.getElementById('cesta').appendChild(nodo)
     }
 
@@ -55,8 +55,11 @@ function anyadir(producto){
     let form = document.getElementById('formulario')
     //let accion = form.getAttribute('action')
     let accion = '?action=realizar_compra&productos_cesta=' + a
-
-    form.setAttribute('action', accion)
+    
+    if(form!=null){
+        form.setAttribute('action', accion)
+    }
+    
 
 
 }

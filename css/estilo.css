@@ -260,3 +260,7 @@ li{padding-bottom: 15px;}
     width: 200px;
     background-color:#FFFFE0;
 }
+
+#formPrecio{
+    display: inline;
+}

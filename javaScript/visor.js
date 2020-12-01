@@ -35,9 +35,10 @@ function visor(x){
 
 }
 
+
 function insertarOpciones(x){
         let n = document.createElement('option')
-        n.setAttribute("id", x["id_producto"])
+        //n.setAttribute("id", x["id_producto"])
 
         //n.setAttribute("onchange", "mostrarEnVisor()")
 
@@ -51,7 +52,48 @@ function insertarOpciones(x){
 
 
 function mostrarEnVisor(elem){
-   document.getElementById(Prod2ID[elem.value]).scrollIntoView()
+    console.log(Prod2ID[elem.value])
+
+    //Para evitar el error de introducir en el imput algo que no este en la lista
+    if(Prod2ID[elem.value]!=null){
+        document.getElementById(Prod2ID[elem.value]).scrollIntoView()
+    }
+    
    
 }
 
+function precioMinMAx(){
+    let min= document.getElementById('min').value
+    let max= document.getElementById('max').value
+    console.log(min)
+    console.log(max)
+
+    //"minimo="+min+"&maximo="+max+""
+    let data= new FormData()
+    data.append('min',min)
+    data.append('max',max)
+    //o
+    let data2= new URLSearchParams("minimo="+min+"&maximo="+max+"")
+
+    console.log(data)
+    console.log(data2)
+
+    data2.append('min',min)
+
+    console.log(data2)
+
+    fetch('/precios.php',{
+        method:'POST',
+        body:data
+    }) 
+    .then(response => {
+        if (response.ok)
+            return response.json()
+        else
+            throw response.statusText
+    })
+	.then(data=>{data.forEach(x => visor(x)); 
+                data.forEach(x => insertarOpciones(x))})
+                
+
+}

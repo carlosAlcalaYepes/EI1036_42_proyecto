@@ -9,10 +9,21 @@ function tablaVisor(){
     print"
     <input list='list' name='list' onchange='mostrarEnVisor(this)'>
     ";
-    
+
     print"
     <datalist id='list'>
     </datalist>
+    ";
+
+    //formulario de precios
+    print"
+    <label>Precio minimo</label>
+		<input type='number' step='0.01' name='min' id='min' class='item_requerid' size='20' min='0.01'/>
+
+    <label>Precio maximo</label>
+		<input type='number' step='0.01' name='max' id='max' class='item_requerid' size='20' min='0.01'/>
+         
+         <input type='button' value='Buscar' onclick='precioMinMAx()'>
     ";
 
 
