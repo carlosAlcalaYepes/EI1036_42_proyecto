@@ -2,6 +2,9 @@ var Prod2ID = {}
 
 function visor(x){
 
+  
+
+    console.log("visor")
     let contenedor=document.createElement('div')
     contenedor.setAttribute('class', 'item')
     contenedor.setAttribute('id',x["id_producto"])
@@ -63,24 +66,25 @@ function mostrarEnVisor(elem){
 }
 
 function precioMinMAx(){
+
+   
+    //borrar el visor que hay, no se si es correcto
+    while (document.getElementById('visor').firstChild){
+        document.getElementById('visor').removeChild(document.getElementById('visor').firstChild);
+    };
+      
     let min= document.getElementById('min').value
     let max= document.getElementById('max').value
-    console.log(min)
-    console.log(max)
 
     //"minimo="+min+"&maximo="+max+""
     let data= new FormData()
     data.append('min',min)
     data.append('max',max)
     //o
-    let data2= new URLSearchParams("minimo="+min+"&maximo="+max+"")
+    //let data2= new URLSearchParams("minimo="+min+"&maximo="+max+"")
 
-    console.log(data)
-    console.log(data2)
-
-    data2.append('min',min)
-
-    console.log(data2)
+    //con esto se ve el data y si esta bien
+    //console.log(Array.from(data.values()))
 
     fetch('/precios.php',{
         method:'POST',
@@ -93,7 +97,8 @@ function precioMinMAx(){
             throw response.statusText
     })
 	.then(data=>{data.forEach(x => visor(x)); 
-                data.forEach(x => insertarOpciones(x))})
-                
+                data.forEach(x => insertarOpciones(x))
+    })
+    .catch(err => console.log('Fetch Error :', err) )            
 
 }
