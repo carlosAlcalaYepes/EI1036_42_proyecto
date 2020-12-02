@@ -2,25 +2,7 @@
 
 function autentificar_usuario()
 {
-    /*version
-    global $pdo;
-    $datos=$_REQUEST;//$_POST
-
-    $query= sprintf("SELECT * FROM cliente WHERE nombre='%s' AND contraseña='%s'", mysql_real_escape_string($datos['nombre'])
-                                                                                 , mysql_real_escape_string($datos['contraseña']));
-    $resultado= mysql_query($query);
-
-    if(!$resultado){
-        $mensaje = 'autentificación fallida';
-    }
-
-    else{
-        $cliente=mysql_fetch_assoc($resultado);
-        $_SESSION["usuario"]=$cliente['rol'];
-    }
-    version1*/
-
-    //Version2
+    
     global $pdo;
 
     $datos = $_POST;
@@ -52,18 +34,13 @@ function autentificar_usuario()
     } catch (PDOExeption $e) {
         echo ($e->getMessage());
     }
-    //Version2
+
 
    
 }
 
 
-    /*
-    buscar usuario y passwd en DB y comparar con $_POST
-    según el resultado fijar la variable de sesion o mostar error
-
-    $_SESSION["usuario"] = role
-    */
+    
 
 
 ?>

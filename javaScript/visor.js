@@ -68,20 +68,24 @@ function mostrarEnVisor(elem){
 function precioMinMAx(){
 
    
-    //borrar el visor que hay, no se si es correcto
+    //borrar el visor que hay
     while (document.getElementById('visor').firstChild){
         document.getElementById('visor').removeChild(document.getElementById('visor').firstChild);
     };
+
+    while (document.getElementById('list').firstChild){
+        document.getElementById('list').removeChild(document.getElementById('list').firstChild);
+    };
+
       
     let min= document.getElementById('min').value
     let max= document.getElementById('max').value
 
-    //"minimo="+min+"&maximo="+max+""
+    
     let data= new FormData()
     data.append('min',min)
     data.append('max',max)
-    //o
-    //let data2= new URLSearchParams("minimo="+min+"&maximo="+max+"")
+   
 
     //con esto se ve el data y si esta bien
     //console.log(Array.from(data.values()))
