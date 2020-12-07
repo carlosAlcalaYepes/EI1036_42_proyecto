@@ -264,3 +264,10 @@ li{padding-bottom: 15px;}
 #formPrecio{
     display: inline;
 }
+
+.miItem {margin:10px;}
+.elimina {background-color:red;}
+
+ons-carousel-item{
+    background-color: rgb(236, 243, 170);
+}

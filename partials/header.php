@@ -11,10 +11,15 @@
 <html>
 
 <head>
+
+
 	<meta charset="UTF-8">
 	<title>Bienvenido a la web de MI TIENDA</title>
-	<META name="Author" content="AlumnoXXX">
+	<META name="Autores" content="Maria Jesus Prior Bruno y Carlos Alcalá Yepes">
 	<link rel="stylesheet" href="./css/estilo.css" type="text/css">
+
+
+  
 	
 
 </head>

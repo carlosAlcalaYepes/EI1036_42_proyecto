@@ -2,9 +2,6 @@ var Prod2ID = {}
 
 function visor(x){
 
-  
-
-    console.log("visor")
     let contenedor=document.createElement('div')
     contenedor.setAttribute('class', 'item')
     contenedor.setAttribute('id',x["id_producto"])
