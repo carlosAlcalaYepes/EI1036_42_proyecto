@@ -22,10 +22,9 @@ var Prod2ID = {}
   //llenar el visor
   function visor(x){
 
-    console.log("visor")
     let nodo = document.createElement('ons-carousel-item')
     let contenedor=document.createElement('div')
-    contenedor.setAttribute('class', 'item')
+    contenedor.setAttribute('class', 'itemM')
     contenedor.setAttribute('id',x["id_producto"])
 
 
@@ -95,43 +94,42 @@ var Prod2ID = {}
         localStorage.setItem('localcesta', JSON.stringify(lista))
 
         let botonCompra = document.getElementById('botonComprar')
-        botonCompra.onclick=comprarMovil
-           
-     
-        function comprarMovil(){
-          var a=JSON.stringify(lista)
-
-          let var1="]"
-          let var2="["
-          a=a.replace(var2,"")
-          a=a.replace(var1,"")
-          a=a.replace(/"/g,"")
-        
-         
-       
-          let data= new FormData()
-          data.append('productos',a)
-        
-  
-          //con esto se ve el data y si esta bien
-          //console.log(Array.from(data.values()))
-  
-          fetch('/comprar.php',{
-              method:'POST',
-              body:data
-          }) 
-          .then(response => {
-              if (response.ok)
-                  return response.json()
-              else
-                  throw response.statusText
-          })
-        .then(data=>{data.forEach(x => visor(x)); 
-                      /*data.forEach(x => insertarOpciones(x))*/
-          })
-          .catch(err => console.log('Fetch Error :', err) )         
+        if(botonCompra != null){
+          botonCompra.onclick=comprarMovil()
         }
+    }
 
+    
+    function comprarMovil(){
+      let lista = document.querySelectorAll('.miItem')
+      lista = Array.from(lista).map(n => n.textContent)
+      localStorage.setItem('localcesta', JSON.stringify(lista))
+
+      var a=JSON.stringify(lista)
+
+      let var1="]"
+      let var2="["
+      a=a.replace(var2,"")
+      a=a.replace(var1,"")
+      a=a.replace(/"/g,"")
+    
+      let data= new FormData()
+      data.append('productos',a)
+
+      fetch('comprarMovil.php',{
+          method:'POST',
+          body:data
+      }) 
+      .then(response => {
+          if (response.ok)
+              return response.json()
+          else
+              throw response.statusText
+      })
+      .then(data=>{data.forEach(x => visor(x)) 
+                  /*data.forEach(x => insertarOpciones(x))*/
+      })
+      .catch(err => console.log('Fetch Error :', err) )         
     }
 
     function eliminar(){

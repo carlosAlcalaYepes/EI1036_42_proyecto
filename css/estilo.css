@@ -261,6 +261,13 @@ li{padding-bottom: 15px;}
     background-color:#FFFFE0;
 }
 
+.itemM{
+    text-align: center; 
+    font-size: 30px; 
+    margin-top: 20px; 
+    background-color:#FFFFE0;
+}
+
 #formPrecio{
     display: inline;
 }

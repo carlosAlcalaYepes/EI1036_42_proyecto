@@ -18,10 +18,6 @@
 	<META name="Autores" content="Maria Jesus Prior Bruno y Carlos Alcalá Yepes">
 	<link rel="stylesheet" href="./css/estilo.css" type="text/css">
 
-
-  
-	
-
 </head>
 
 

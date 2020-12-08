@@ -4,7 +4,6 @@
 include(dirname(__FILE__)."/includes/conector_BD.php");
 header('Content-type: application/json');
 
-$valor = array($_REQUEST["min"],$_REQUEST["max"]);
 $query = "INSERT INTO compra (fecha, id_cliente, id_producto) VALUES (?,?,?)";
 
 try { 
@@ -12,13 +11,18 @@ try {
     $hoy = getdate();
     $fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
 
-    $array = explode(",", $_POST['productos']);
+    $array = explode(",", $_REQUEST['productos']);
+
+    $OK = array('resultado' => 'OK');
+    $KO = array('resultado' => 'KO');
 
     foreach($array as $id){
-    $a = $consult->execute(array($fecha, $_SESSION["id_usuario"], $id));
-    if (1>$a) ;
+        $a = $consult->execute(array($fecha, $_SESSION["id_usuario"], $id));
+        if (1>$a){
+            echo json_encode($KO); //{“resultado”: “KO”}
+        }
     }
-
+    echo json_encode($OK); //{“resultado”: “OK”}
 } catch (PDOExeption $e) {
     echo ($e->getMessage());
 }
@@ -27,7 +31,7 @@ try {
 
 
 
-
+/*
     header('Content-type: application/json');
     $result = $pdo->prepare("SELECT * FROM producto where precio betWeen ? and ?;");
     $result->execute($valor);
@@ -106,6 +110,6 @@ function comprar()
     } catch (PDOExeption $e) {
         echo ($e->getMessage());
     }
-}
+}*/
 
 ?>

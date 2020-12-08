@@ -7,6 +7,7 @@ print"
   <link rel='stylesheet' href='https://unpkg.com/onsenui/css/onsenui.css'>
   <link rel='stylesheet' href='https://unpkg.com/onsenui/css/onsen-css-components.min.css'>
   <script src='https://unpkg.com/onsenui/js/onsenui.min.js'></script>
+  <link rel='stylesheet' href='./css/estilo.css' type='text/css'>
 
   <style>
     .miItem {margin:10px;}
