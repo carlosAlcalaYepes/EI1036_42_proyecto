@@ -9,12 +9,6 @@ print"
   <script src='https://unpkg.com/onsenui/js/onsenui.min.js'></script>
   <link rel='stylesheet' href='./css/estilo.css' type='text/css'>
 
-
-	
-
-
-	
-
   <style>
     .miItem {margin:10px;}
     .elimina {background-color:red;}
