@@ -1,5 +1,5 @@
 <?php
-
+ 
 print"
 <!DOCTYPE html>
 <html>
@@ -9,12 +9,19 @@ print"
   <script src='https://unpkg.com/onsenui/js/onsenui.min.js'></script>
   <link rel='stylesheet' href='./css/estilo.css' type='text/css'>
 
+
+	
+
+
+	
+
   <style>
     .miItem {margin:10px;}
     .elimina {background-color:red;}
   </style>
 </head>
 <body>
+
 <ons-navigator id='appNavigator' swipeable swipe-target-width='80px'>
   <ons-page>
     <ons-splitter id='appSplitter'>
@@ -82,7 +89,7 @@ print"
         
     </ons-list>
 
-    <ons-button id='botonComprar' modifier='large'>Comprar</ons-button>
+    <ons-button id='botonComprar' onclick=comprarMovil() modifier='large'>Comprar</ons-button>
   </ons-page>
 
 </template>

@@ -52,9 +52,7 @@ var Prod2ID = {}
     nodo.appendChild(contenedor)
 
     document.getElementById('carousel').appendChild(nodo)
-    /*if(document.getElementById('carousel') != null){
-        document.getElementById('carousel').appendChild(nodo)
-    }*/
+
 
 
     }
@@ -92,15 +90,13 @@ var Prod2ID = {}
         let lista = document.querySelectorAll('.miItem')
         lista = Array.from(lista).map(n => n.textContent)
         localStorage.setItem('localcesta', JSON.stringify(lista))
-
-        let botonCompra = document.getElementById('botonComprar')
-        if(botonCompra != null){
-          botonCompra.onclick=comprarMovil()
-        }
+       
     }
 
     
     function comprarMovil(){
+
+      
       let lista = document.querySelectorAll('.miItem')
       lista = Array.from(lista).map(n => n.textContent)
       localStorage.setItem('localcesta', JSON.stringify(lista))
@@ -116,6 +112,8 @@ var Prod2ID = {}
       let data= new FormData()
       data.append('productos',a)
 
+      
+
       fetch('comprarMovil.php',{
           method:'POST',
           body:data
@@ -126,11 +124,18 @@ var Prod2ID = {}
           else
               throw response.statusText
       })
-      .then(data=>{data.forEach(x => visor(x)) 
-                  /*data.forEach(x => insertarOpciones(x))*/
-      })
-      .catch(err => console.log('Fetch Error :', err) )         
+      .catch(err => console.log('Fetch Error :', err) ) 
+      
+      lista= Array();
+      localStorage.setItem('localcesta', JSON.stringify(lista))
+      alert("SE HA REALIZADO LA COMPRA DE TUS PRODUCTOS DE LA CESTA")
+      while (document.getElementById('cesta').firstChild){
+        document.getElementById('cesta').removeChild(document.getElementById('cesta').firstChild);
+    };
     }
+   
+
+
 
     function eliminar(){
         this.parentNode.remove()

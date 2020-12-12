@@ -2,16 +2,17 @@
 
 
 include(dirname(__FILE__)."/includes/conector_BD.php");
-header('Content-type: application/json');
-
+$_SESSION["id_usuario"] = "10";
+print_r($_SESSION["id_usuario"]);
 $query = "INSERT INTO compra (fecha, id_cliente, id_producto) VALUES (?,?,?)";
-
+$array = explode(",", $_POST['productos']);
+header('Content-type: application/json');
 try { 
     $consult = $pdo -> prepare($query);
     $hoy = getdate();
     $fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
 
-    $array = explode(",", $_REQUEST['productos']);
+    
 
     $OK = array('resultado' => 'OK');
     $KO = array('resultado' => 'KO');

@@ -21,5 +21,7 @@
 			 echo '<img src="../img/cesta_negra.jpg" onclick="verCesta()" width="42" height="42" style="vertical-align:middle"/>'
 		//    echo '<li><a href="?action=ver_cesta">Cesta de Compra</a></li>';
         ?>
+		
+		
 	</ul>
 </nav>
